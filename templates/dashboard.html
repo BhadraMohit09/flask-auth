@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — AuthApp{% endblock %}
+{% block content %}
+<section class="card center">
+    <h2>Welcome, {{ user.username }}</h2>
+    <p class="lead">This is your dashboard. All your data is secure in MongoDB.</p>
+    <a class="btn btn-outline" href="{{ url_for('change_password') }}">Change Password</a>
+    <a class="btn btn-outline" href="{{ url_for('logout') }}">Logout</a>
+</section>
+{% endblock %}

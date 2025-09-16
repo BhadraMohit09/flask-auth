@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home — AuthApp{% endblock %}
+{% block content %}
+<section class="card center">
+    <h1>Welcome to AuthApp</h1>
+    <p class="lead">Secure authentication with Flask & MongoDB. Fully responsive & production-ready.</p>
+    <div class="btn-row">
+        {% if 'user' in session %}
+        <a class="btn" href="{{ url_for('dashboard') }}">Go to Dashboard</a>
+        <a class="btn btn-outline" href="{{ url_for('login') }}">SignIn</a>
+        {% else %}
+        <a class="btn" href="{{ url_for('register') }}">Create Account</a>
+        <a class="btn btn-outline" href="{{ url_for('login') }}">SignIn</a>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
